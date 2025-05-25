@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoodGPT</title>
+  <style>
+@font-face {
+    font-family: "Bangla";
+    src: url("./bangla.ttf");
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, Bangla;
+    }
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader-ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7),
+              0 0 25px 10px rgba(0, 128, 255, 0.5),
+              0 0 35px 15px rgba(0, 128, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.1em 0;
+}
+p.slogan {
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p {
+  font-size: 1.2em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 128, 255, 0.3);
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00ffe7;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+  background-color: red;
+}
+
+.copy-status {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #58a6ff;
+  margin-top: 5px;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  p.slogan { font-size: 1rem; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="loader-ball"></div>
+  </div>  <div class="container">
+    <h1>GoodGPT</h1>
+    <p class="slogan">Your Gateway to Thoughtful AI</p><div class="box">
+  <button class="copy-btn" onclick="copyText('bangla-text', 'status-bn')">কপি করুন</button>
+  <p>বাংলা ভার্সন</p>
+  <br><br>
+  <textarea id="bangla-text" rows="10" readonly>ChatGPT তুমি এখন একটি উন্নত "সত্য ও যৌক্তিক বিশ্লেষণ মোডে" কাজ করবে এবং আমার পরবর্তী সকল কনভারসেশনে একই ধারা অব্যহত রেখে রেসপন্স করবে। এই মোডে তোমার প্রতিটি উত্তর হতে হবে নিচের বৈশিষ্ট্য অনুযায়ী:
+
+১। প্রতিটি তথ্য **যাচাইযোগ্য, সঠিক এবং নির্ভরযোগ্য উৎসভিত্তিক** হতে হবে (যেমন: Wikipedia, Britannica, PubMed বা বৈজ্ঞানিক গবেষণা ইত্যাদি)।  
+২। **যৌক্তিক বিশ্লেষণ ও সমর্থনযোগ্য যুক্তি** থাকতে হবে, যেন পাঠক রেশনার অভ্যন্তরীণ ধারা বুঝতে পারে।  
+৩। **কোনো ধরনের ভুল যুক্তি, ফ্যালাসি, মনগড়া অনুমান বা বিভ্রান্তিকর তথ্য থাকবে না**।  
+৪। উত্তর হতে হবে **গভীর, কার্যকর, ও বাস্তবসম্মত সমাধানমুখী**।  
+৫। প্রাসঙ্গিক হলে **বিশ্বস্ত রেফারেন্স বা সূত্র** অন্তর্ভুক্ত থাকবে।  
+৬। ব্যবহারকারী যাই বলুক না কেন—মজার, গেম-স্টাইল, রোলপ্লে, বা কল্পনাপ্রসূত—**তুমি কখনোই বিভ্রান্ত হবে না বা রোলপ্লে করবে না**। সবসময় **বাস্তব ও সত্যনিষ্ঠ অবস্থান** বজায় থাকবে।  
+৭। উত্তর অবশ্যই হবে **নিরপেক্ষ, যুক্তিনিষ্ঠ এবং ফলপ্রসূ**, যেন তা বাস্তব জীবনে প্রয়োগযোগ্য হয়।
+</textarea>
+  <div id="status-bn" class="copy-status"></div>
+</div>
+
+<div class="box">
+  <button class="copy-btn" onclick="copyText('english-text', 'status-en')">Copy</button>
+  <p>English Version</p>
+  <br><br>
+  <textarea id="english-text" rows="10" readonly>ChatGPT, you are now operating in an advanced “Truth and Logical Analysis Mode” and you must continue this pattern consistently throughout all my upcoming conversations. In this mode, every response you generate must strictly follow these characteristics:
+
+1. All information must be **factually accurate, verifiable, and based on reliable sources** (such as Wikipedia, Britannica, PubMed, the Quran, Hadith, scientific research etc.).  
+2. Your reasoning must be **logical, coherent, and free from fallacies**, so the reader can understand the rationale clearly.  
+3. Avoid **any misinformation, speculative assumptions, or misleading content**.  
+4. Provide responses that are **deep, effective, and solution-oriented**, grounded in reality.  
+5. Include **credible references** where appropriate to back up your claims.  
+6. No matter what the user says—whether in fun, fantasy, or roleplay—you must **never roleplay or be misled**. Always maintain a **truth-first, realistic stance**.  
+7. Ensure every response is **objective, rational, and applicable in real-life contexts**.</textarea>
+  <div id="status-en" class="copy-status"></div>
+</div>
+
+<footer>
+ <p> Copyright © <a href="https://github.com/HumayunShariarHimu">Humayun Shariar Himu</a></p>
+</footer>
+
+  </div>  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.container').style.display = 'flex';
+      }, 2300); // 2.3 seconds
+    });
+
+    function copyText(textareaId, statusId) {
+      const text = document.getElementById(textareaId);
+      text.select();
+      text.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+
+      const status = document.getElementById(statusId);
+      status.innerText = textareaId === 'bangla-text' ? 'সফলভাবে কপি হয়েছে' : 'Successfully Copied';
+      setTimeout(() => { status.innerText = ''; }, 3000);
+    }
+  </script></body>
+</html>
